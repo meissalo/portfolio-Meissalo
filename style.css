@@ -1,0 +1,312 @@
+@keyframes backgroundShift {
+  0% { background-position: 0 0; }
+  100% { background-position: 100px 100px; }
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background: url('https://www.transparenttextures.com/patterns/diamond-upholstery.png'), #4d4bc0ff;
+  background-repeat: repeat;
+  animation: backgroundShift 30s linear infinite;
+  color: #010103;
+  margin: 0;
+  padding: 0;
+}
+
+
+
+
+
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 2rem;
+  background-color: #392fc7ff;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.navbar {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.navbar li a {
+  color: #0f0b0b;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.navbar li a:hover {
+  color: #d876e0;
+}
+
+.menu-toggle {
+  display: none;
+  font-size: 1.8rem;
+  color: #9c4242;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    background-color: rgba(0,0,0,0.8);
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 200px;
+    display: none;
+    padding: 1rem;
+    border-radius: 8px;
+  }
+
+  .navbar.active {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+}
+
+.section {
+  padding: 4rem 2rem;
+  min-height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: rgba(0,0,0,0.4);
+  position: relative;
+}
+
+.container {
+  max-width: 1100px;
+  width: 100%;
+}
+
+.profile-img {
+  width: 150px;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+}
+
+h1 span {
+  color: #edeef7;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.6rem 1.2rem;
+  margin-top: 1rem;
+  background-color: #d456d4;
+  color: #000;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background-color: #ff00ff;
+  transform: translateY(-2px);
+}
+
+.skills-grid, .projects-grid, .hobbies-grid, .experience-grid {
+  display: grid;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.skills-grid {
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+}
+
+.projects-grid {
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.hobbies-grid {
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+}
+
+.experience-grid {
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.card, .project-card, .hobby-card, .experience-card {
+  background: rgba(219, 215, 215, 0.6);
+  padding: 1rem;
+  border-radius: 10px;
+  transition: transform 0.3s, background 0.3s;
+  text-align: center;
+}
+
+.card:hover, .project-card:hover, .hobby-card:hover, .experience-card:hover {
+  transform: translateY(-5px);
+  background-color: rgba(182, 189, 190, 0.3);
+}
+
+.project-card img, .about-image img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 0.5rem;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.project-card img:hover, .about-image img:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 8px 20px rgba(0,224,255,0.4);
+}
+
+.project-card h3, .experience-card h3 {
+  margin: 0.5rem 0;
+  color: #080808;
+}
+
+.project-card p, .experience-card p em {
+  font-size: 0.85rem;
+}
+
+.about-container {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.about-image img {
+  max-width: 300px;
+  width: 100%;
+  border-radius: 15px;
+  box-shadow: 0px 4px 15px rgba(0,0,0,0.2);
+}
+
+.about-text {
+  flex: 1;
+  min-width: 280px;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 0.6rem;
+  margin-bottom: 1rem;
+  border-radius: 5px;
+  border: none;
+}
+
+button.btn {
+  cursor: pointer;
+}
+
+.footer {
+  background-color: rgba(0,0,0,0.8);
+  color: #fff;
+  text-align: center;
+  padding: 1rem 2rem;
+  font-size: 0.9rem;
+  margin-top: 2rem;
+}
+
+.footer a {
+  color: #00e0ff;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+.footer-container {
+  max-width: 1000px;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.footer p {
+  margin: 0;
+  font-size: 0.85rem;
+}
+
+#scrollTopBtn {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  padding: 0.5rem 0.8rem;
+  border: none;
+  border-radius: 50%;
+  background-color: #00e0ff;
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: opacity 0.3s, transform 0.3s;
+}
+
+#scrollTopBtn:hover {
+  transform: translateY(-2px);
+  opacity: 0.9;
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+.section-divider {
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.section-divider svg {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100px;
+}
+
+.divider-path {
+  fill: rgba(0,224,255,0.4);
+  animation: wave 6s infinite linear;
+}
+
+@keyframes wave {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 3rem 1rem;
+  }
+
+  .about-container {
+    flex-direction: column;
+  }
+
+  .project-card img, .about-image img {
+    height: 200px;
+  }
+}
